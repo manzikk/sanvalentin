@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>San Valentín</title>
+    <style>
+        body {
+            background-image: url('https://i.imgur.com/Y1vpq3m.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+            transition: background-image 0.5s ease-in-out;
+        }
+        .container {
+            margin-top: 20vh;
+        }
+        h1 {
+            font-size: 3rem;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            font-size: 1.5rem;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .yes {
+            background-color: #ff4081;
+            color: white;
+        }
+        .no {
+            background-color: #444;
+            color: white;
+        }
+        #message {
+            display: none;
+            font-size: 2.5rem;
+            margin-top: 20vh;
+            color: yellow;
+            text-shadow: 4px 4px 10px rgba(0, 0, 0, 1);
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="main-container">
+        <h1>De parte de tu pololo hermoso, ¿Quieres ser mi San Valentín?</h1>
+        <div class="buttons">
+            <button class="yes" onclick="showMessage()">Sí</button>
+            <button class="no" onclick="growYes()">No</button>
+        </div>
+    </div>
+    <p id="message"></p>
+    
+    <script>
+        function showMessage() {
+            document.body.style.backgroundImage = "url('https://static.vecteezy.com/system/resources/previews/017/733/424/non_2x/teddy-bear-with-colorful-hearts-and-a-piece-of-paper-with-copy-space-valentine-s-day-concept-universal-holiday-background-image-vector.jpg')";
+            document.getElementById('main-container').style.display = "none";
+            let message = document.getElementById('message');
+            message.innerText = "Gracias por aceptar! Me haces demasiado feliz y estoy muy feliz de que seas mi San Valentín. Te amo muchísimo ❤️";
+            message.style.display = "block";
+        }
+        function growYes() {
+            let yesButton = document.querySelector('.yes');
+            let currentSize = parseFloat(window.getComputedStyle(yesButton).fontSize);
+            yesButton.style.fontSize = (currentSize + 5) + 'px';
+        }
+    </script>
+</body>
+</html>
